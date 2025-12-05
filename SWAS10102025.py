@@ -33,7 +33,10 @@ ttk.Label(ventana,text="Evelyn Juarez Perez").grid(column=0,row=6)
 
 
 
+
+
 #Activamos la ventana
 ventana.resizable(0,0)
 ventana.mainloop()
+
 
