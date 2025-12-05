@@ -4,11 +4,9 @@ import tkinter as tk
 #creamos la funcion de mostrarventana2
 def mostrar_ventana2():
 
-    ventana1.withdraw() 
-    #esta funcion sirve para que oculte la ventana 1
+    ventana1.withdraw() #esta funcion sirve para que oculte la ventana 1
     
-    ventana2.deiconify() 
-    # muestre la ventana 2
+    ventana2.deiconify()  # muestre la ventana 2
 
 #creamos la funcion de regresar
 def regresar ():
@@ -45,5 +43,6 @@ ventana2.withdraw()
 
 #creacion de ventanas (lanzar la interfaz)
 ventana1.mainloop()
+
 
 
