@@ -31,30 +31,36 @@ contenido_frame.pack(side="right", fill="both", expand=True)  # Posiciona el fra
 
 
 # funcion para cambiar de pagina 
-def mostrar_pagina(nombre):
-    for widget in contenido_frame.winfo_children():
-        widget.destroy()
-        paginas[nombre]()
+def mostrar_pagina(nombre):  # Define una función para cambiar entre páginas
+    for widget in contenido_frame.winfo_children():  # Recorre todos los elementos dentro del frame de contenido
+        widget.destroy()    # Elimina cada widget actual
+        paginas[nombre]()  # Llama a la función de la página seleccionada
 
 # paginas
-def pagina_bienvenida():
-    tk.Label(contenido_frame, text= "Bienvenido a bienestar total", font=FUENTE_TITULO, bg=COLOR_FONDO).pack(pady=30)
-    tk.Label(contenido_frame, text= "TU ESPACIO DE APOYO, INFO Y SLAUD EMOCIONAL.", bg=COLOR_FONDO, font= FUENTE_TEXTO).pack(pady=10)
+def pagina_bienvenida():  # Función para mostrar la página de inicio
+    tk.Label(contenido_frame, text= "Bienvenido a bienestar total", font=FUENTE_TITULO, bg=COLOR_FONDO).pack(pady=30)   # Muestra el título principal
 
-def pagina_registro():
-    tk.Label(contenido_frame, text="Registro de usuario", font=COLOR_FONDO).pack(pady=20)
-for campo in ["Nombre", "Edad", "correo",]:
-    tk.Label(contenido_frame, text=f"{campo}:", bg=COLOR_FONDO, font=FUENTE_TEXTO). pack()
-    tk.Entry(contenido_frame, width=40).pack(pady=5)
+    tk.Label(contenido_frame, text= "TU ESPACIO DE APOYO, INFO Y SLAUD EMOCIONAL.", bg=COLOR_FONDO, font= FUENTE_TEXTO).pack(pady=10)   # Muestra el subtítulo
+
+def pagina_registro():  # Función para mostrar la página de registro
+    tk.Label(contenido_frame, text="Registro de usuario", font=COLOR_FONDO).pack(pady=20)    # Muestra el título de registro
+
+for campo in ["Nombre", "Edad", "correo",]:     # Recorre los campos que se quieren pedir
+
+    tk.Label(contenido_frame, text=f"{campo}:", bg=COLOR_FONDO, font=FUENTE_TEXTO). pack()   # Crea una etiqueta para cada campo
+
+    tk.Entry(contenido_frame, width=40).pack(pady=5)  # Crea una caja de texto para cada campo
              
-def pagina_test():
-    tk.Label(contenido_frame,text="Test bienestar",font=FUENTE_TITULO, bg=COLOR_FONDO).pack(pady=20)
+def pagina_test():  # Función para mostrar la página del test
+
+    tk.Label(contenido_frame,text="Test bienestar",font=FUENTE_TITULO, bg=COLOR_FONDO).pack(pady=20)    # Muestra el título del test
+
     tk.Label(contenido_frame,text="Responde las siguientes preguntas para conocer tu nivel de bienestar.", wraplength=600, bg=COLOR_FONDO).pack(pady=10)
     ttk.Button(contenido_frame, text="iniciar test").pack(pady=20)
 
 
 #diccionario de paginas 
-paginas = {
+paginas = {    # Diccionario que relaciona el nombre del botón con su función
     "Bienvenida":pagina_bienvenida,
     "Registro":pagina_registro,
     "Test":pagina_test,
@@ -62,14 +68,18 @@ paginas = {
 }
 
 #botones del menu lateral
-for nombre in paginas:
-    ttk.Button(menu_frame, text=nombre, command=lambda n=nombre: mostrar_pagina (n)).pack(fill="x", pady=5, padx=10)
+for nombre in paginas: # Recorre el diccionario de páginas
+    ttk.Button(menu_frame, text=nombre, command=lambda n=nombre: mostrar_pagina (n)).pack(fill="x", pady=5, padx=10)  # Crea un botón por cada página y llama a la función correspondiente
 
-ttk.Button(menu_frame, text="Salir", command=root.quit).pack(side ="bottom", pady=10)
+
+ttk.Button(menu_frame, text="Salir", command=root.quit).pack(side ="bottom", pady=10) # Crea el botón para cerrar el programa
+
 
 # mostrar pagina inicial
 pagina_bienvenida()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+# Muestra la página de bienvenida al iniciar el programa
 
-root.mainloop()
+root.mainloop()   # Mantiene la ventana abierta en ejecución
+
 
 
