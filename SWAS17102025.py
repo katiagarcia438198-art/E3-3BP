@@ -1,4 +1,5 @@
-import tkinter as tk
+import tkinter as tk 
+
 from tkinter import ttk
 
 # configuracion de colores 
@@ -63,3 +64,4 @@ ttk.Button(menu_frame, text="Salir", command=root.quit).pack(side ="bottom", pad
 pagina_bienvenida()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
 root.mainloop()
+
